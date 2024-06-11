@@ -32,7 +32,7 @@ class MQTTMetrics(object):
         self.deferred_metrics_queue = queue.Queue()
 
     def connect(self):
-        self.client = mqtt.Client(self.system_name + '_metrics2mqtt')
+        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, self.system_name + '_metrics2mqtt')
         try: 
             if self.username or self.password:
                 self.client.username_pw_set(self.username, self.password)
