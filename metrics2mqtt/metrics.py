@@ -32,7 +32,7 @@ class BaseMetric(object):
         return config_topic
 
     def sanitize(self, val):
-        return val.lower().replace(" ", "_").replace("/","_")
+        return val.lower().replace(" ", "_").replace("/","_").replace(".","_")
 
     def poll(self, result_queue=None):
         raise NotImplementedError
